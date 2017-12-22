@@ -75,18 +75,19 @@ The next few lines about clicks are for the Collecting Click Locations quiz in t
 */
 var clickLocations = [];
 
-function logClicks(x,y) {
+function logClicks(x, y, msg) {
   clickLocations.push(
     {
       x: x,
       y: y
     }
   );
-  console.log('x location: ' + x + '; y location: ' + y);
+  console.log('x location: ' + x + '; y location: ' + y + msg);
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  logClicks(loc.pageX, loc.pageY, ' - Relative to the whole document');  // relative to the whole document
+  logClicks(loc.clientX, loc.clientY, ' - Relative to current window');  // relative to current window (local DOM content)
 });
 
 
