@@ -109,7 +109,7 @@ var work = {
     }
 };
 
-const projects = {
+var projects = {
     projects: [
         {
             title: 'Sample Project 1',
